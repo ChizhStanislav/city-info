@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Builder
 @Setter
 @Getter
-@ToString(exclude = "")
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
