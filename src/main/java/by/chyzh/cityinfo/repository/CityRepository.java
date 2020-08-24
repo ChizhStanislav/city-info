@@ -15,7 +15,7 @@ public interface CityRepository extends CrudRepository<City, Long> {
 
     List<City> findAll();
 
-    Optional<City> findByName(String name);
+    Optional<City> findByNameIgnoreCase(String name);
 
     @Modifying
     @Query("update City c set c.name =:name, c.description =:description where c.id =:id")

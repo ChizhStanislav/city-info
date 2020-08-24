@@ -59,7 +59,7 @@ public class CityImplService implements CityService {
 
     @Override
     public CityDto findByName(String name) {
-        City city = cityRepository.findByName(name).orElseThrow(() -> new NotFoundException("City with name " + name + " not found"));
+        City city = cityRepository.findByNameIgnoreCase(name).orElseThrow(() -> new NotFoundException("City with name " + name + " not found"));
         return CityDto.builder()
                 .id(city.getId())
                 .name(city.getName())
